@@ -85,9 +85,10 @@ assert(englishStemmer.stopWords.has("been"));
 
 ## Supported Languages
 
+<!-- deno-fmt-ignore -->
 Unless specified, there is only one stemmer available called
-_**Language**_Stemmer which is exported from _**language**__stemmer.ts and
-mod.ts. Replace _**language**_ with the desired language respecting the hinted
+***Language***Stemmer which is exported from ***language***_stemmer.ts and
+mod.ts. Replace ***language*** with the desired language respecting the hinted
 capitalization.
 
 1. Arabic
