@@ -44,7 +44,7 @@ Unless specified, there is only one stemmer available called `Language`Stemmer.
 1. Greek
 1. Hindi
 1. Hungarian
-1. Indonesian (needs to be fixes)
+1. Indonesian
 1. Irish
 1. Italian
 1. Lithuanian

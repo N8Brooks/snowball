@@ -6,21 +6,21 @@ const a_0: Rule[] = [
   ["pun", -1, 1],
 ];
 
-const g_vowel = [17, 65, 16];
-
 const a_1: Rule[] = [
   ["nya", -1, 1],
   ["ku", -1, 1],
   ["mu", -1, 1],
 ];
 
+const g_vowel = [17, 65, 16];
+
 export class IndonesianStemmer extends Stemmer {
-  stopWords = undefined;
+  I_prefix = 0;
+  I_measure = 0;
 
-  private I_prefix = 0;
-  private I_measure = 0;
+  stopWords: undefined;
 
-  r_remove_particle() {
+  r_remove_particle = () => {
     this.ket = this.cursor;
     if (this.find_among_b(a_0) == 0) {
       return false;
@@ -31,9 +31,9 @@ export class IndonesianStemmer extends Stemmer {
     }
     this.I_measure -= 1;
     return true;
-  }
+  };
 
-  r_remove_possessive_pronoun() {
+  r_remove_possessive_pronoun = () => {
     this.ket = this.cursor;
     if (this.find_among_b(a_1) == 0) {
       return false;
@@ -44,9 +44,9 @@ export class IndonesianStemmer extends Stemmer {
     }
     this.I_measure -= 1;
     return true;
-  }
+  };
 
-  r_SUFFIX_KAN_OK() {
+  r_SUFFIX_KAN_OK = () => {
     if (!(this.I_prefix != 3)) {
       return false;
     }
@@ -54,16 +54,16 @@ export class IndonesianStemmer extends Stemmer {
       return false;
     }
     return true;
-  }
+  };
 
-  r_SUFFIX_AN_OK() {
+  r_SUFFIX_AN_OK = () => {
     if (!(this.I_prefix != 1)) {
       return false;
     }
     return true;
-  }
+  };
 
-  r_SUFFIX_I_OK() {
+  r_SUFFIX_I_OK = () => {
     if (!(this.I_prefix <= 2)) {
       return false;
     }
@@ -78,9 +78,9 @@ export class IndonesianStemmer extends Stemmer {
       this.cursor = this.limit - v_1;
     }
     return true;
-  }
+  };
 
-  r_remove_suffix() {
+  r_remove_suffix = () => {
     this.ket = this.cursor;
     if (this.find_among_b(this.a_2) == 0) {
       return false;
@@ -91,7 +91,7 @@ export class IndonesianStemmer extends Stemmer {
     }
     this.I_measure -= 1;
     return true;
-  }
+  };
 
   r_VOWEL = () => {
     if (!this.in_grouping(g_vowel, 97, 117)) {
@@ -330,13 +330,13 @@ export class IndonesianStemmer extends Stemmer {
     return true;
   }
 
-  private readonly a_2: Rule[] = [
+  a_2: Rule[] = [
     ["i", -1, 1, this.r_SUFFIX_I_OK],
     ["an", -1, 1, this.r_SUFFIX_AN_OK],
     ["kan", 1, 1, this.r_SUFFIX_KAN_OK],
   ];
 
-  private readonly a_3: Rule[] = [
+  a_3: Rule[] = [
     ["di", -1, 1],
     ["ke", -1, 2],
     ["me", -1, 1],
@@ -351,7 +351,7 @@ export class IndonesianStemmer extends Stemmer {
     ["ter", -1, 1],
   ];
 
-  private readonly a_4: Rule[] = [
+  a_4: Rule[] = [
     ["be", -1, 3, this.r_KER],
     ["belajar", 0, 4],
     ["ber", 0, 3],
