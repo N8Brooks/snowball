@@ -1,53 +1,99 @@
-// deno-lint-ignore-file
-// deno-fmt-ignore-file
+// Import from mod.ts
 
-/**@constructor*/
-export const BaseStemmer = function () {
-  this.setCurrent = function (value) {
+export type Rule =
+  | [string, number, number]
+  | [string, number, number, (stemmer: Stemmer) => boolean];
+
+export abstract class Stemmer {
+  current!: string;
+  cursor!: number;
+  limit!: number;
+  limit_backward!: number;
+  bra!: number;
+  ket!: number;
+
+  /** Words in this language that tend to not be informative */
+  abstract readonly stopWords?: Set<string>;
+
+  /** Constructs the stem */
+  abstract stemHelper(): void;
+
+  /** Maps languages to their stemmer class */
+  static languages: Map<string, { new (): Stemmer } & typeof Stemmer> =
+    new Map();
+
+  /** Factory method that constructs a stemmer for a specific language */
+  static from(language: string) {
+    language = language.toLowerCase();
+    const stemmerClass = Stemmer.languages.get(language);
+    if (stemmerClass) {
+      return new stemmerClass();
+    } else {
+      throw RangeError(`There is no stemmer for ${language}`);
+    }
+  }
+
+  /** The stem of lowercase `word` */
+  stem(word: string): string {
+    this.setCurrent(word);
+    this.stemHelper();
+    return this.getCurrent();
+  }
+
+  /** Registers the language as in `Stemmer` */
+  static _register(
+    language: string,
+    stemmerClass: { new (): Stemmer } & typeof Stemmer,
+  ) {
+    Stemmer.languages.set(language, stemmerClass);
+  }
+
+  protected setCurrent(value: string) {
     this.current = value;
     this.cursor = 0;
     this.limit = this.current.length;
     this.limit_backward = 0;
     this.bra = this.cursor;
     this.ket = this.limit;
-  };
+  }
 
-  this.getCurrent = function () {
+  protected getCurrent() {
     return this.current;
-  };
+  }
 
-  this.copy_from = function (other) {
+  // Remove?
+  protected copy_from(other: Stemmer) {
     this.current = other.current;
     this.cursor = other.cursor;
     this.limit = other.limit;
     this.limit_backward = other.limit_backward;
     this.bra = other.bra;
     this.ket = other.ket;
-  };
+  }
 
-  this.in_grouping = function (s, min, max) {
+  protected in_grouping(s: number[], min: number, max: number) {
     if (this.cursor >= this.limit) return false;
-    var ch = this.current.charCodeAt(this.cursor);
+    let ch = this.current.charCodeAt(this.cursor);
     if (ch > max || ch < min) return false;
     ch -= min;
     if ((s[ch >>> 3] & (0x1 << (ch & 0x7))) == 0) return false;
     this.cursor++;
     return true;
-  };
+  }
 
-  this.in_grouping_b = function (s, min, max) {
+  protected in_grouping_b(s: number[], min: number, max: number) {
     if (this.cursor <= this.limit_backward) return false;
-    var ch = this.current.charCodeAt(this.cursor - 1);
+    let ch = this.current.charCodeAt(this.cursor - 1);
     if (ch > max || ch < min) return false;
     ch -= min;
     if ((s[ch >>> 3] & (0x1 << (ch & 0x7))) == 0) return false;
     this.cursor--;
     return true;
-  };
+  }
 
-  this.out_grouping = function (s, min, max) {
+  protected out_grouping(s: number[], min: number, max: number) {
     if (this.cursor >= this.limit) return false;
-    var ch = this.current.charCodeAt(this.cursor);
+    let ch = this.current.charCodeAt(this.cursor);
     if (ch > max || ch < min) {
       this.cursor++;
       return true;
@@ -58,11 +104,11 @@ export const BaseStemmer = function () {
       return true;
     }
     return false;
-  };
+  }
 
-  this.out_grouping_b = function (s, min, max) {
+  protected out_grouping_b(s: number[], min: number, max: number) {
     if (this.cursor <= this.limit_backward) return false;
-    var ch = this.current.charCodeAt(this.cursor - 1);
+    let ch = this.current.charCodeAt(this.cursor - 1);
     if (ch > max || ch < min) {
       this.cursor--;
       return true;
@@ -73,45 +119,45 @@ export const BaseStemmer = function () {
       return true;
     }
     return false;
-  };
+  }
 
-  this.eq_s = function (s) {
+  protected eq_s(s: string) {
     if (this.limit - this.cursor < s.length) return false;
     if (this.current.slice(this.cursor, this.cursor + s.length) != s) {
       return false;
     }
     this.cursor += s.length;
     return true;
-  };
+  }
 
-  this.eq_s_b = function (s) {
+  protected eq_s_b(s: string) {
     if (this.cursor - this.limit_backward < s.length) return false;
     if (this.current.slice(this.cursor - s.length, this.cursor) != s) {
       return false;
     }
     this.cursor -= s.length;
     return true;
-  };
+  }
 
-  /** @return {number} */ this.find_among = function (v) {
-    var i = 0;
-    var j = v.length;
+  protected find_among(v: Rule[]) {
+    let i = 0;
+    let j = v.length;
 
-    var c = this.cursor;
-    var l = this.limit;
+    const c = this.cursor;
+    const l = this.limit;
 
-    var common_i = 0;
-    var common_j = 0;
+    let common_i = 0;
+    let common_j = 0;
 
-    var first_key_inspected = false;
+    let first_key_inspected = false;
 
     while (true) {
-      var k = i + ((j - i) >>> 1);
-      var diff = 0;
-      var common = common_i < common_j ? common_i : common_j; // smaller
+      const k = i + ((j - i) >>> 1);
+      let diff = 0;
+      let common = common_i < common_j ? common_i : common_j; // smaller
       // w[0]: string, w[1]: substring_i, w[2]: result, w[3]: function (optional)
-      var w = v[k];
-      var i2;
+      const w = v[k];
+      let i2;
       for (i2 = common; i2 < w[0].length; i2++) {
         if (c + common == l) {
           diff = -1;
@@ -141,38 +187,38 @@ export const BaseStemmer = function () {
       }
     }
     do {
-      var w = v[i];
+      const w = v[i];
       if (common_i >= w[0].length) {
         this.cursor = c + w[0].length;
         if (w.length < 4) return w[2];
-        var res = w[3](this);
+        const res = w[3]!(this);
         this.cursor = c + w[0].length;
         if (res) return w[2];
       }
       i = w[1];
     } while (i >= 0);
     return 0;
-  };
+  }
 
   // find_among_b is for backwards processing. Same comments apply
-  this.find_among_b = function (v) {
-    var i = 0;
-    var j = v.length;
+  protected find_among_b(v: Rule[]) {
+    let i = 0;
+    let j = v.length;
 
-    var c = this.cursor;
-    var lb = this.limit_backward;
+    const c = this.cursor;
+    const lb = this.limit_backward;
 
-    var common_i = 0;
-    var common_j = 0;
+    let common_i = 0;
+    let common_j = 0;
 
-    var first_key_inspected = false;
+    let first_key_inspected = false;
 
     while (true) {
-      var k = i + ((j - i) >> 1);
-      var diff = 0;
-      var common = common_i < common_j ? common_i : common_j;
-      var w = v[k];
-      var i2;
+      const k = i + ((j - i) >> 1);
+      let diff = 0;
+      let common = common_i < common_j ? common_i : common_j;
+      const w = v[k];
+      let i2;
       for (i2 = w[0].length - 1 - common; i2 >= 0; i2--) {
         if (c - common == lb) {
           diff = -1;
@@ -197,32 +243,32 @@ export const BaseStemmer = function () {
       }
     }
     do {
-      var w = v[i];
+      const w = v[i];
       if (common_i >= w[0].length) {
         this.cursor = c - w[0].length;
         if (w.length < 4) return w[2];
-        var res = w[3](this);
+        const res = w[3]!(this);
         this.cursor = c - w[0].length;
         if (res) return w[2];
       }
       i = w[1];
     } while (i >= 0);
     return 0;
-  };
+  }
 
   /* to replace chars between c_bra and c_ket in this.current by the
    * chars in s.
    */
-  this.replace_s = function (c_bra, c_ket, s) {
-    var adjustment = s.length - (c_ket - c_bra);
+  protected replace_s(c_bra: number, c_ket: number, s: string) {
+    const adjustment = s.length - (c_ket - c_bra);
     this.current = this.current.slice(0, c_bra) + s + this.current.slice(c_ket);
     this.limit += adjustment;
     if (this.cursor >= c_ket) this.cursor += adjustment;
     else if (this.cursor > c_bra) this.cursor = c_bra;
     return adjustment;
-  };
+  }
 
-  this.slice_check = function () {
+  protected slice_check() {
     if (
       this.bra < 0 ||
       this.bra > this.ket ||
@@ -232,36 +278,36 @@ export const BaseStemmer = function () {
       return false;
     }
     return true;
-  };
+  }
 
-  this.slice_from = function (s) {
-    var result = false;
+  protected slice_from(s: string) {
+    let result = false;
     if (this.slice_check()) {
       this.replace_s(this.bra, this.ket, s);
       result = true;
     }
     return result;
-  };
+  }
 
-  this.slice_del = function () {
+  protected slice_del() {
     return this.slice_from("");
-  };
+  }
 
-  this.insert = function (c_bra, c_ket, s) {
-    var adjustment = this.replace_s(c_bra, c_ket, s);
+  protected insert(c_bra: number, c_ket: number, s: string) {
+    const adjustment = this.replace_s(c_bra, c_ket, s);
     if (c_bra <= this.bra) this.bra += adjustment;
     if (c_bra <= this.ket) this.ket += adjustment;
-  };
+  }
 
-  this.slice_to = function () {
-    var result = "";
+  protected slice_to() {
+    let result = "";
     if (this.slice_check()) {
       result = this.current.slice(this.bra, this.ket);
     }
     return result;
-  };
+  }
 
-  this.assign_to = function () {
+  protected assign_to() {
     return this.current.slice(0, this.limit);
-  };
-};
+  }
+}
