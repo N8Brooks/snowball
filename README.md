@@ -46,7 +46,7 @@ assertStrictEquals(
 
 Many languages are supported
 
-````ts
+```ts
 import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
 import { RussianStemmer } from "https://deno.land/x/snowball/russian_stemmer.ts";
 
@@ -81,7 +81,7 @@ import { EnglishStemmer } from "https://deno.land/x/snowball.english_stemmer.ts"
 const englishStemmer = new EnglishStemmer();
 
 assert(englishStemmer.stopWords.has("been"));
-````
+```
 
 ## Supported Languages
 
