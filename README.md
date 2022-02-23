@@ -55,8 +55,8 @@ const sentence = "обязательно выпейте свой овалтин"
 const russianStemmer = new RussianStemmer();
 
 const stemmedSentence = sentence
-  .match(/\b\w\w+\b/gu)
   .split(/\s+/u)
+  .map((token) => russianStemmer.stem(token))
   .join(" ");
 
 assertStrictEquals(
