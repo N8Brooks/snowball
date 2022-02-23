@@ -1,3 +1,4 @@
+import { GERMAN_STOP_WORDS } from "./german_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -53,7 +54,7 @@ export class GermanStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;
 
-  stopWords = undefined;
+  readonly stopWords = GERMAN_STOP_WORDS;
 
   r_prelude() {
     const v_1 = this.cursor;

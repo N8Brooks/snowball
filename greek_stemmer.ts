@@ -1117,7 +1117,7 @@ const g_v2 = [81, 65, 0, 1];
 export class GreekStemmer extends Stemmer {
   private B_test1 = false;
 
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_has_min_length() {
     if (!(this.current.length >= 3)) {

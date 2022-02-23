@@ -252,7 +252,7 @@ export class RomanianStemmer extends Stemmer {
   private I_p1 = 0;
   private I_pV = 0;
 
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_prelude() {
     while (true) {

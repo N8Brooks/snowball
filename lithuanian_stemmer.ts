@@ -299,7 +299,7 @@ const g_v = [17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 
 export class LithuanianStemmer extends Stemmer {
   private I_p1 = 0;
 
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_R1() {
     if (!(this.I_p1 <= this.cursor)) {

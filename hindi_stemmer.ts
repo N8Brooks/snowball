@@ -3,7 +3,7 @@ import { Rule, Stemmer } from "./_stemmer.ts";
 const g_consonant = [255, 255, 255, 255, 159, 0, 0, 0, 248, 7];
 
 export class HindiStemmer extends Stemmer {
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_CONSONANT = () => {
     if (!this.in_grouping_b(g_consonant, 2325, 2399)) {

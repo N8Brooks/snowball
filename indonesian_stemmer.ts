@@ -1,3 +1,4 @@
+import { INDONESIAN_STOP_WORDS } from "./indonesian_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -18,7 +19,7 @@ export class IndonesianStemmer extends Stemmer {
   I_prefix = 0;
   I_measure = 0;
 
-  stopWords: undefined;
+  stopWords = INDONESIAN_STOP_WORDS;
 
   r_remove_particle = () => {
     this.ket = this.cursor;

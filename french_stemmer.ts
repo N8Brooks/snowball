@@ -1,3 +1,4 @@
+import { FRENCH_STOP_WORDS } from "./french_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -183,7 +184,7 @@ export class FrenchStemmer extends Stemmer {
   private I_p1 = 0;
   private I_pV = 0;
 
-  stopWords = undefined;
+  readonly stopWords = FRENCH_STOP_WORDS;
 
   r_prelude() {
     while (true) {

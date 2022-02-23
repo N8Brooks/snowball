@@ -1,3 +1,4 @@
+import { ENGLISH_STOP_WORDS } from "./english_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -93,7 +94,7 @@ export class PorterStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;
 
-  stopWords = undefined;
+  readonly stopWords = ENGLISH_STOP_WORDS;
 
   r_shortv() {
     if (!this.out_grouping_b(g_v_WXY, 89, 121)) {

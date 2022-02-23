@@ -1,3 +1,4 @@
+import { FINNISH_STOP_WORDS } from "./finnish_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -102,7 +103,7 @@ export class FinnishStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;
 
-  readonly stopWords = undefined;
+  readonly stopWords = FINNISH_STOP_WORDS;
 
   r_mark_regions() {
     this.I_p1 = this.limit;

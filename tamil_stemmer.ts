@@ -248,7 +248,7 @@ export class TamilStemmer extends Stemmer {
   private B_found_vetrumai_urupu = false;
   private B_found_a_match = false;
 
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_has_min_length() {
     if (!(this.current.length > 4)) {

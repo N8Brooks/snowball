@@ -8,8 +8,11 @@ based on the compiled JavaScript stemmers from the
 
 ### EnglishStemmer
 
-```typescript
-import { EnglishStemmer } from "https://deno.land/x/snowball.english_stemmer.ts";
+Provides the stem of the given word. Assumes that the input is lowercase.
+
+```ts
+import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
 
 const englishStemmer = new EnglishStemmer();
 
@@ -17,6 +20,68 @@ const stem = englishStemmer.stem("enthusiastically");
 
 assertStrictEquals(stem, "enthusiast");
 ```
+
+Here is an example with multiple words.
+
+```ts
+import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
+
+const sentence = "the quick brown fox jumped over the lazy dog";
+
+const englishStemmer = new EnglishStemmer();
+
+const stemmedSentence = sentence
+  .match(/\b\w\w+\b/gu) // matches two or more word characters
+  .map((token) => englishStemmer.stem(token))
+  .join(" ");
+
+assertStrictEquals(
+  stemmedSentence,
+  "the quick brown fox jump over the lazi dog",
+);
+```
+
+### RussianStemmer
+
+Many languages are supported
+
+````ts
+import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { RussianStemmer } from "https://deno.land/x/snowball/russian_stemmer.ts";
+
+const sentence = "обязательно выпейте свой овалтин";
+
+const russianStemmer = new RussianStemmer();
+
+const stemmedSentence = sentence
+  .match(/\b\w\w+\b/gu)
+  .split(/\s+/u)
+  .join(" ");
+
+assertStrictEquals(
+  stemmedSentence,
+  "обязательн вып сво овалтин",
+);
+```
+
+### stopWords
+
+Stop words generally provide little or no information. Some languages come with
+common stop words from the
+[snowball-website](https://github.com/snowballstem/snowball-website). These can
+also be imported individually from the file containing the stopwords for that
+language. You should tokenize and stem these stop words the same way you do with
+your input text.
+
+```ts
+import { assert } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { EnglishStemmer } from "https://deno.land/x/snowball.english_stemmer.ts";
+
+const englishStemmer = new EnglishStemmer();
+
+assert(englishStemmer.stopWords.has("been"));
+````
 
 ## Supported Languages
 
@@ -41,6 +106,10 @@ Unless specified, there is only one stemmer available called `Language`Stemmer.
 1. Finnish
 1. French
 1. German
+
+- GermanStemmer
+- German2Stemmer
+
 1. Greek
 1. Hindi
 1. Hungarian

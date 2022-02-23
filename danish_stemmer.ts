@@ -1,3 +1,4 @@
+import { DANISH_STOP_WORDS } from "./danish_stop_words.ts";
 import { Rule } from "./_stemmer.ts";
 import { Stemmer } from "./_stemmer.ts";
 
@@ -62,7 +63,7 @@ export class DanishStemmer extends Stemmer {
   private I_p1 = 0;
   private S_ch = "";
 
-  readonly stopWords = undefined;
+  readonly stopWords = DANISH_STOP_WORDS;
 
   r_mark_regions() {
     this.I_p1 = this.limit;

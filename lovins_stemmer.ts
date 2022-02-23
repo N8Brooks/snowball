@@ -1,3 +1,4 @@
+import { ENGLISH_STOP_WORDS } from "./english_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -63,7 +64,7 @@ const a_3: Rule[] = [
 ];
 
 export class LovinsStemmer extends Stemmer {
-  stopWords = undefined;
+  readonly stopWords = ENGLISH_STOP_WORDS;
 
   r_A = () => {
     {

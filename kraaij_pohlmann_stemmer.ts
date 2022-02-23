@@ -1,3 +1,4 @@
+import { DUTCH_STOP_WORDS } from "./dutch_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -118,7 +119,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
   private I_p1 = 0;
   private S_ch = "";
 
-  stopWords = undefined;
+  readonly stopWords = DUTCH_STOP_WORDS;
 
   r_R1() {
     if (!(this.I_p1 <= this.cursor)) {

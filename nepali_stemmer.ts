@@ -127,7 +127,7 @@ const a_3: Rule[] = [
 ];
 
 export class NepaliStemmer extends Stemmer {
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_remove_category_1() {
     this.ket = this.cursor;

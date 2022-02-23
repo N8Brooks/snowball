@@ -203,7 +203,7 @@ export class YiddishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;
 
-  stopWords = undefined;
+  readonly stopWords = undefined;
 
   r_prelude() {
     const v_1 = this.cursor;

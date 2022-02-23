@@ -1,3 +1,4 @@
+import { PORTUGUESE_STOP_WORDS } from "./portuguese_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -226,7 +227,7 @@ export class PortugueseStemmer extends Stemmer {
   private I_p1 = 0;
   private I_pV = 0;
 
-  stopWords = undefined;
+  readonly stopWords = PORTUGUESE_STOP_WORDS;
 
   r_prelude() {
     while (true) {

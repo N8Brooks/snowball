@@ -1,3 +1,4 @@
+import { SPANISH_STOP_WORDS } from "./spanish_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -239,7 +240,7 @@ export class SpanishStemmer extends Stemmer {
   private I_p1 = 0;
   private I_pV = 0;
 
-  stopWords = undefined;
+  readonly stopWords = SPANISH_STOP_WORDS;
 
   r_mark_regions() {
     this.I_pV = this.limit;
