@@ -67,11 +67,12 @@ assertStrictEquals(
 
 ### stopWords
 
-Stop words generally provide little or no information. Some stemmers come with
-common stop words from their specific language
+Stop words generally provide little or no information. Some languages come with
+common stop words from the
 [snowball-website](https://github.com/snowballstem/snowball-website). These can
-also be imported individually. You should tokenize and stem these stop words the
-same way you do with your input text.
+also be imported individually from the file containing the stopwords for that
+language. You should tokenize and stem these stop words the same way you do with
+your input text.
 
 ```ts
 import { assert } from "https://deno.land/std@0.126.0/testing/asserts.ts";
@@ -92,23 +93,17 @@ Unless specified, there is only one stemmer available called `Language`Stemmer.
 1. Catalan
 1. Danish
 1. Dutch
-
-- DutchStemmer
-- KraaijPohlmannStemmer
-
+   1. DutchStemmer
+   1. KraaijPohlmannStemmer
 1. English
-
-- EnglishStemmer - Porter 2 or snowball algorithm
-- PorterStemmer - Porter 1 stemmer
-- LovinsStemmer - The first published stemming algorithm
-
+   1. EnglishStemmer - Porter 2 or snowball algorithm
+   1. PorterStemmer - Porter 1 stemmer
+   1. LovinsStemmer - The first published stemming algorithm
 1. Finnish
 1. French
 1. German
-
-- GermanStemmer
-- German2Stemmer
-
+   1. GermanStemmer
+   1. German2Stemmer
 1. Greek
 1. Hindi
 1. Hungarian
