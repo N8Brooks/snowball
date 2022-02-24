@@ -250,14 +250,14 @@ export class TamilStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_has_min_length() {
+  private r_has_min_length() {
     if (!(this.current.length > 4)) {
       return false;
     }
     return true;
   }
 
-  r_fix_va_start() {
+  private r_fix_va_start() {
     lab0: {
       const v_1 = this.cursor;
       lab1: {
@@ -344,7 +344,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_fix_endings() {
+  private r_fix_endings() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -361,7 +361,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_question_prefixes() {
+  private r_remove_question_prefixes() {
     this.bra = this.cursor;
     if (!this.eq_s("\u0B8E")) {
       return false;
@@ -382,7 +382,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_fix_ending() {
+  private r_fix_ending() {
     if (!(this.current.length > 3)) {
       return false;
     }
@@ -703,7 +703,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_pronoun_prefixes() {
+  private r_remove_pronoun_prefixes() {
     this.B_found_a_match = false;
     this.bra = this.cursor;
     if (this.find_among(a_11) == 0) {
@@ -726,7 +726,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_plural_suffix() {
+  private r_remove_plural_suffix() {
     this.B_found_a_match = false;
     this.limit_backward = this.cursor;
     this.cursor = this.limit;
@@ -794,7 +794,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_question_suffixes() {
+  private r_remove_question_suffixes() {
     if (!this.r_has_min_length()) {
       return false;
     }
@@ -819,7 +819,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_command_suffixes() {
+  private r_remove_command_suffixes() {
     if (!this.r_has_min_length()) {
       return false;
     }
@@ -839,7 +839,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_um() {
+  private r_remove_um() {
     this.B_found_a_match = false;
     if (!this.r_has_min_length()) {
       return false;
@@ -862,7 +862,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_common_word_endings() {
+  private r_remove_common_word_endings() {
     this.B_found_a_match = false;
     if (!this.r_has_min_length()) {
       return false;
@@ -1009,7 +1009,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_vetrumai_urupukal() {
+  private r_remove_vetrumai_urupukal() {
     this.B_found_a_match = false;
     this.B_found_vetrumai_urupu = false;
     if (!this.r_has_min_length()) {
@@ -1323,7 +1323,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_tense_suffixes() {
+  private r_remove_tense_suffixes() {
     this.B_found_a_match = true;
     while (true) {
       const v_1 = this.cursor;
@@ -1342,7 +1342,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_tense_suffix() {
+  private r_remove_tense_suffix() {
     this.B_found_a_match = false;
     if (!this.r_has_min_length()) {
       return false;
@@ -1802,7 +1802,7 @@ export class TamilStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.B_found_vetrumai_urupu = false;
     const v_1 = this.cursor;
     this.r_fix_ending();

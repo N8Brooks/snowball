@@ -205,7 +205,7 @@ export class YiddishStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_prelude() {
+  private r_prelude() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -341,7 +341,7 @@ export class YiddishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     const v_1 = this.cursor;
     lab0: {
@@ -514,21 +514,21 @@ export class YiddishStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R1plus3() {
+  private r_R1plus3() {
     if (!(this.I_p1 <= this.cursor + 3)) {
       return false;
     }
     return true;
   }
 
-  r_standard_suffix() {
+  private r_standard_suffix() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -1014,7 +1014,7 @@ export class YiddishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.r_prelude();
     const v_2 = this.cursor;
     this.r_mark_regions();

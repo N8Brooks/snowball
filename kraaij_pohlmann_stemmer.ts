@@ -121,21 +121,21 @@ export class KraaijPohlmannStemmer extends Stemmer {
 
   readonly stopWords = DUTCH_STOP_WORDS;
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_V() {
+  private r_V() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       const v_2 = this.limit - this.cursor;
@@ -154,7 +154,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_VX() {
+  private r_VX() {
     const v_1 = this.limit - this.cursor;
     if (this.cursor <= this.limit_backward) {
       return false;
@@ -177,7 +177,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_C() {
+  private r_C() {
     const v_1 = this.limit - this.cursor;
     {
       const v_2 = this.limit - this.cursor;
@@ -196,7 +196,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_lengthen_V() {
+  private r_lengthen_V() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       if (!this.out_grouping_b(g_v_WX, 97, 121)) {
@@ -289,7 +289,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1() {
+  private r_Step_1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);
     if (among_var == 0) {
@@ -486,7 +486,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_2() {
+  private r_Step_2() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -702,7 +702,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_3() {
+  private r_Step_3() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -803,7 +803,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_4() {
+  private r_Step_4() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -926,7 +926,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_7() {
+  private r_Step_7() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_5);
     if (among_var == 0) {
@@ -953,7 +953,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_6() {
+  private r_Step_6() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_6);
     if (among_var == 0) {
@@ -1065,7 +1065,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1c() {
+  private r_Step_1c() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_7);
     if (among_var == 0) {
@@ -1119,7 +1119,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Lose_prefix() {
+  private r_Lose_prefix() {
     this.bra = this.cursor;
     if (!this.eq_s("ge")) {
       return false;
@@ -1173,7 +1173,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_Lose_infix() {
+  private r_Lose_infix() {
     if (this.cursor >= this.limit) {
       return false;
     }
@@ -1241,7 +1241,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  r_measure() {
+  private r_measure() {
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
     const v_1 = this.cursor;
@@ -1333,7 +1333,7 @@ export class KraaijPohlmannStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.B_Y_found = false;
     this.B_stemmed = false;
     const v_1 = this.cursor;

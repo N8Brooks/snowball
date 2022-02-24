@@ -234,7 +234,7 @@ export class IndonesianStemmer extends Stemmer {
     return true;
   };
 
-  stemHelper() {
+  _stemHelper() {
     this.I_measure = 0;
     const v_1 = this.cursor;
     while (true) {

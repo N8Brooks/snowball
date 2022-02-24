@@ -99,7 +99,7 @@ export class IrishStemmer extends Stemmer {
 
   readonly stopWords = IRISH_STOP_WORDS;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
@@ -165,7 +165,7 @@ export class IrishStemmer extends Stemmer {
     return true;
   }
 
-  r_initial_morph() {
+  private r_initial_morph() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_0);
     if (among_var == 0) {
@@ -227,28 +227,28 @@ export class IrishStemmer extends Stemmer {
     return true;
   }
 
-  r_RV() {
+  private r_RV() {
     if (!(this.I_pV <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_noun_sfx() {
+  private r_noun_sfx() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -276,7 +276,7 @@ export class IrishStemmer extends Stemmer {
     return true;
   }
 
-  r_deriv() {
+  private r_deriv() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -321,7 +321,7 @@ export class IrishStemmer extends Stemmer {
     return true;
   }
 
-  r_verb_sfx() {
+  private r_verb_sfx() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_3);
     if (among_var == 0) {
@@ -349,7 +349,7 @@ export class IrishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_initial_morph();
     this.cursor = v_1;

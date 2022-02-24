@@ -166,7 +166,7 @@ export class RussianStemmer extends Stemmer {
 
   readonly stopWords = RUSSIAN_STOP_WORDS;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p2 = this.limit;
     const v_1 = this.cursor;
@@ -230,14 +230,14 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_perfective_gerund() {
+  private r_perfective_gerund() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);
     if (among_var == 0) {
@@ -272,7 +272,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_adjective() {
+  private r_adjective() {
     this.ket = this.cursor;
     if (this.find_among_b(a_1) == 0) {
       return false;
@@ -284,7 +284,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_adjectival() {
+  private r_adjectival() {
     if (!this.r_adjective()) {
       return false;
     }
@@ -327,7 +327,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_reflexive() {
+  private r_reflexive() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -339,7 +339,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_verb() {
+  private r_verb() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_4);
     if (among_var == 0) {
@@ -374,7 +374,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_noun() {
+  private r_noun() {
     this.ket = this.cursor;
     if (this.find_among_b(a_5) == 0) {
       return false;
@@ -386,7 +386,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_derivational() {
+  private r_derivational() {
     this.ket = this.cursor;
     if (this.find_among_b(a_6) == 0) {
       return false;
@@ -401,7 +401,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  r_tidy_up() {
+  private r_tidy_up() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_7);
     if (among_var == 0) {
@@ -442,7 +442,7 @@ export class RussianStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;

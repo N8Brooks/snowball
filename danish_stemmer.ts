@@ -65,7 +65,7 @@ export class DanishStemmer extends Stemmer {
 
   readonly stopWords = DANISH_STOP_WORDS;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     const v_1 = this.cursor;
     {
@@ -116,7 +116,7 @@ export class DanishStemmer extends Stemmer {
     return true;
   }
 
-  r_main_suffix() {
+  private r_main_suffix() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -148,7 +148,7 @@ export class DanishStemmer extends Stemmer {
     return true;
   }
 
-  r_consonant_pair() {
+  private r_consonant_pair() {
     const v_1 = this.limit - this.cursor;
     if (this.cursor < this.I_p1) {
       return false;
@@ -174,7 +174,7 @@ export class DanishStemmer extends Stemmer {
     return true;
   }
 
-  r_other_suffix() {
+  private r_other_suffix() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -222,7 +222,7 @@ export class DanishStemmer extends Stemmer {
     return true;
   }
 
-  r_undouble() {
+  private r_undouble() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -248,7 +248,7 @@ export class DanishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_mark_regions();
     this.cursor = v_1;

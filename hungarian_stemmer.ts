@@ -227,7 +227,7 @@ export class HungarianStemmer extends Stemmer {
 
   readonly stopWords = HUNGARIAN_STOP_WORDS;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     lab0: {
       const v_1 = this.cursor;
@@ -290,14 +290,14 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_v_ending() {
+  private r_v_ending() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -322,7 +322,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_double() {
+  private r_double() {
     const v_1 = this.limit - this.cursor;
     if (this.find_among_b(a_2) == 0) {
       return false;
@@ -331,7 +331,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_undouble() {
+  private r_undouble() {
     if (this.cursor <= this.limit_backward) {
       return false;
     }
@@ -351,7 +351,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_instrum() {
+  private r_instrum() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -372,7 +372,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_case() {
+  private r_case() {
     this.ket = this.cursor;
     if (this.find_among_b(a_4) == 0) {
       return false;
@@ -390,7 +390,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_case_special() {
+  private r_case_special() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_5);
     if (among_var == 0) {
@@ -415,7 +415,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_case_other() {
+  private r_case_other() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_6);
     if (among_var == 0) {
@@ -445,7 +445,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_factive() {
+  private r_factive() {
     this.ket = this.cursor;
     if (this.find_among_b(a_7) == 0) {
       return false;
@@ -466,7 +466,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_plural() {
+  private r_plural() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_8);
     if (among_var == 0) {
@@ -496,7 +496,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_owned() {
+  private r_owned() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_9);
     if (among_var == 0) {
@@ -526,7 +526,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_sing_owner() {
+  private r_sing_owner() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_10);
     if (among_var == 0) {
@@ -556,7 +556,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  r_plur_owner() {
+  private r_plur_owner() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_11);
     if (among_var == 0) {
@@ -586,7 +586,7 @@ export class HungarianStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_mark_regions();
     this.cursor = v_1;

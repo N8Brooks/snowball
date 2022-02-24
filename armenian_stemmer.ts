@@ -211,7 +211,7 @@ export class ArmenianStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p2 = this.limit;
     const v_1 = this.cursor;
@@ -275,14 +275,14 @@ export class ArmenianStemmer extends Stemmer {
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_adjective() {
+  private r_adjective() {
     this.ket = this.cursor;
     if (this.find_among_b(a_0) == 0) {
       return false;
@@ -294,7 +294,7 @@ export class ArmenianStemmer extends Stemmer {
     return true;
   }
 
-  r_verb() {
+  private r_verb() {
     this.ket = this.cursor;
     if (this.find_among_b(a_1) == 0) {
       return false;
@@ -306,7 +306,7 @@ export class ArmenianStemmer extends Stemmer {
     return true;
   }
 
-  r_noun() {
+  private r_noun() {
     this.ket = this.cursor;
     if (this.find_among_b(a_2) == 0) {
       return false;
@@ -318,7 +318,7 @@ export class ArmenianStemmer extends Stemmer {
     return true;
   }
 
-  r_ending() {
+  private r_ending() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -333,7 +333,7 @@ export class ArmenianStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.r_mark_regions();
     this.limit_backward = this.cursor;
     this.cursor = this.limit;

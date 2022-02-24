@@ -129,7 +129,7 @@ const a_3: Rule[] = [
 export class NepaliStemmer extends Stemmer {
   readonly stopWords = undefined;
 
-  r_remove_category_1() {
+  private r_remove_category_1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);
     if (among_var == 0) {
@@ -171,7 +171,7 @@ export class NepaliStemmer extends Stemmer {
     return true;
   }
 
-  r_check_category_2() {
+  private r_check_category_2() {
     this.ket = this.cursor;
     if (this.find_among_b(a_1) == 0) {
       return false;
@@ -180,7 +180,7 @@ export class NepaliStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_category_2() {
+  private r_remove_category_2() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -232,7 +232,7 @@ export class NepaliStemmer extends Stemmer {
     return true;
   }
 
-  r_remove_category_3() {
+  private r_remove_category_3() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -244,7 +244,7 @@ export class NepaliStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.limit_backward = this.cursor;
     this.cursor = this.limit;
     const v_1 = this.limit - this.cursor;

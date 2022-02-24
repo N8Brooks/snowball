@@ -69,7 +69,7 @@ export class SwedishStemmer extends Stemmer {
 
   readonly stopWords = SWEDISH_STOP_WORDS;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     const v_1 = this.cursor;
     {
@@ -120,7 +120,7 @@ export class SwedishStemmer extends Stemmer {
     return true;
   }
 
-  r_main_suffix() {
+  private r_main_suffix() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -152,7 +152,7 @@ export class SwedishStemmer extends Stemmer {
     return true;
   }
 
-  r_consonant_pair() {
+  private r_consonant_pair() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -178,7 +178,7 @@ export class SwedishStemmer extends Stemmer {
     return true;
   }
 
-  r_other_suffix() {
+  private r_other_suffix() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -212,7 +212,7 @@ export class SwedishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_mark_regions();
     this.cursor = v_1;

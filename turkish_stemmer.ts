@@ -217,7 +217,7 @@ export class TurkishStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_check_vowel_harmony() {
+  private r_check_vowel_harmony() {
     const v_1 = this.limit - this.cursor;
     golab0:
     while (true) {
@@ -422,7 +422,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_suffix_with_optional_n_consonant() {
+  private r_mark_suffix_with_optional_n_consonant() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -462,7 +462,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_suffix_with_optional_s_consonant() {
+  private r_mark_suffix_with_optional_s_consonant() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -502,7 +502,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_suffix_with_optional_y_consonant() {
+  private r_mark_suffix_with_optional_y_consonant() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -542,7 +542,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_suffix_with_optional_U_vowel() {
+  private r_mark_suffix_with_optional_U_vowel() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -582,7 +582,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_possessives() {
+  private r_mark_possessives() {
     if (this.find_among_b(a_0) == 0) {
       return false;
     }
@@ -592,7 +592,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_sU() {
+  private r_mark_sU() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -605,14 +605,14 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_lArI() {
+  private r_mark_lArI() {
     if (this.find_among_b(a_1) == 0) {
       return false;
     }
     return true;
   }
 
-  r_mark_yU() {
+  private r_mark_yU() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -625,7 +625,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_nU() {
+  private r_mark_nU() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -635,7 +635,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_nUn() {
+  private r_mark_nUn() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -648,7 +648,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_yA() {
+  private r_mark_yA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -661,7 +661,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_nA() {
+  private r_mark_nA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -671,7 +671,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_DA() {
+  private r_mark_DA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -681,7 +681,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ndA() {
+  private r_mark_ndA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -691,7 +691,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_DAn() {
+  private r_mark_DAn() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -701,7 +701,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ndAn() {
+  private r_mark_ndAn() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -711,7 +711,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ylA() {
+  private r_mark_ylA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -724,14 +724,14 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ki() {
+  private r_mark_ki() {
     if (!this.eq_s_b("ki")) {
       return false;
     }
     return true;
   }
 
-  r_mark_ncA() {
+  private r_mark_ncA() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -744,7 +744,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_yUm() {
+  private r_mark_yUm() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -757,7 +757,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_sUn() {
+  private r_mark_sUn() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -767,7 +767,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_yUz() {
+  private r_mark_yUz() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -780,14 +780,14 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_sUnUz() {
+  private r_mark_sUnUz() {
     if (this.find_among_b(a_15) == 0) {
       return false;
     }
     return true;
   }
 
-  r_mark_lAr() {
+  private r_mark_lAr() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -797,7 +797,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_nUz() {
+  private r_mark_nUz() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -807,7 +807,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_DUr() {
+  private r_mark_DUr() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -817,14 +817,14 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_cAsInA() {
+  private r_mark_cAsInA() {
     if (this.find_among_b(a_19) == 0) {
       return false;
     }
     return true;
   }
 
-  r_mark_yDU() {
+  private r_mark_yDU() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -837,7 +837,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ysA() {
+  private r_mark_ysA() {
     if (this.find_among_b(a_21) == 0) {
       return false;
     }
@@ -847,7 +847,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_ymUs_() {
+  private r_mark_ymUs_() {
     if (!this.r_check_vowel_harmony()) {
       return false;
     }
@@ -860,7 +860,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_yken() {
+  private r_mark_yken() {
     if (!this.eq_s_b("ken")) {
       return false;
     }
@@ -870,7 +870,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_stem_nominal_verb_suffixes() {
+  private r_stem_nominal_verb_suffixes() {
     this.ket = this.cursor;
     this.B_continue_stemming_noun_suffixes = true;
     lab0: {
@@ -1122,7 +1122,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_stem_suffix_chain_before_ki() {
+  private r_stem_suffix_chain_before_ki() {
     this.ket = this.cursor;
     if (!this.r_mark_ki()) {
       return false;
@@ -1311,7 +1311,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_stem_noun_suffixes() {
+  private r_stem_noun_suffixes() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -1805,7 +1805,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_post_process_last_consonants() {
+  private r_post_process_last_consonants() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_23);
     if (among_var == 0) {
@@ -1837,7 +1837,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_append_U_to_stems_ending_with_d_or_g() {
+  private r_append_U_to_stems_ending_with_d_or_g() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       const v_2 = this.limit - this.cursor;
@@ -2015,7 +2015,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_is_reserved_word() {
+  private r_is_reserved_word() {
     if (!this.eq_s_b("ad")) {
       return false;
     }
@@ -2032,7 +2032,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_more_than_one_syllable_word() {
+  private r_more_than_one_syllable_word() {
     const v_1 = this.cursor;
     {
       let v_2 = 2;
@@ -2066,7 +2066,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  r_postlude() {
+  private r_postlude() {
     this.limit_backward = this.cursor;
     this.cursor = this.limit;
     {
@@ -2089,7 +2089,7 @@ export class TurkishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     if (!this.r_more_than_one_syllable_word()) {
       return false;
     }

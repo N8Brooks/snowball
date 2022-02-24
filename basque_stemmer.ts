@@ -441,7 +441,7 @@ export class BasqueStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
@@ -593,28 +593,28 @@ export class BasqueStemmer extends Stemmer {
     return true;
   }
 
-  r_RV() {
+  private r_RV() {
     if (!(this.I_pV <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_aditzak() {
+  private r_aditzak() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);
     if (among_var == 0) {
@@ -657,7 +657,7 @@ export class BasqueStemmer extends Stemmer {
     return true;
   }
 
-  r_izenak() {
+  private r_izenak() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -728,7 +728,7 @@ export class BasqueStemmer extends Stemmer {
     return true;
   }
 
-  r_adjetiboak() {
+  private r_adjetiboak() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -753,7 +753,7 @@ export class BasqueStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.r_mark_regions();
     this.limit_backward = this.cursor;
     this.cursor = this.limit;

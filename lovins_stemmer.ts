@@ -1163,7 +1163,7 @@ export class LovinsStemmer extends Stemmer {
     return true;
   };
 
-  stemHelper() {
+  _stemHelper() {
     this.limit_backward = this.cursor;
     this.cursor = this.limit;
     const v_1 = this.limit - this.cursor;

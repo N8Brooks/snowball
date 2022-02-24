@@ -56,7 +56,7 @@ export class GermanStemmer extends Stemmer {
 
   readonly stopWords = GERMAN_STOP_WORDS;
 
-  r_prelude() {
+  private r_prelude() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -141,7 +141,7 @@ export class GermanStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
     const v_1 = this.cursor;
@@ -217,7 +217,7 @@ export class GermanStemmer extends Stemmer {
     return true;
   }
 
-  r_postlude() {
+  private r_postlude() {
     while (true) {
       const v_1 = this.cursor;
       lab0: {
@@ -263,21 +263,21 @@ export class GermanStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_standard_suffix() {
+  private r_standard_suffix() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -483,7 +483,7 @@ export class GermanStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_prelude();
     this.cursor = v_1;

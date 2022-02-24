@@ -289,7 +289,7 @@ export class ArabicStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_Normalize_pre() {
+  private r_Normalize_pre() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -577,7 +577,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Normalize_post() {
+  private r_Normalize_post() {
     const v_1 = this.cursor;
     lab0: {
       this.limit_backward = this.cursor;
@@ -640,7 +640,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Checks1() {
+  private r_Checks1() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_3);
     if (among_var == 0) {
@@ -668,7 +668,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step1() {
+  private r_Prefix_Step1() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_4);
     if (among_var == 0) {
@@ -712,7 +712,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step2() {
+  private r_Prefix_Step2() {
     this.bra = this.cursor;
     if (this.find_among(a_5) == 0) {
       return false;
@@ -737,7 +737,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step3a_Noun() {
+  private r_Prefix_Step3a_Noun() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_6);
     if (among_var == 0) {
@@ -765,7 +765,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step3b_Noun() {
+  private r_Prefix_Step3b_Noun() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_7);
     if (among_var == 0) {
@@ -801,7 +801,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step3_Verb() {
+  private r_Prefix_Step3_Verb() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_8);
     if (among_var == 0) {
@@ -845,7 +845,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Prefix_Step4_Verb() {
+  private r_Prefix_Step4_Verb() {
     this.bra = this.cursor;
     if (this.find_among(a_9) == 0) {
       return false;
@@ -862,7 +862,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step1a() {
+  private r_Suffix_Noun_Step1a() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_10);
     if (among_var == 0) {
@@ -898,7 +898,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step1b() {
+  private r_Suffix_Noun_Step1b() {
     this.ket = this.cursor;
     if (this.find_among_b(a_11) == 0) {
       return false;
@@ -913,7 +913,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step2a() {
+  private r_Suffix_Noun_Step2a() {
     this.ket = this.cursor;
     if (this.find_among_b(a_12) == 0) {
       return false;
@@ -928,7 +928,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step2b() {
+  private r_Suffix_Noun_Step2b() {
     this.ket = this.cursor;
     if (this.find_among_b(a_13) == 0) {
       return false;
@@ -943,7 +943,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step2c1() {
+  private r_Suffix_Noun_Step2c1() {
     this.ket = this.cursor;
     if (this.find_among_b(a_14) == 0) {
       return false;
@@ -958,7 +958,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step2c2() {
+  private r_Suffix_Noun_Step2c2() {
     this.ket = this.cursor;
     if (this.find_among_b(a_15) == 0) {
       return false;
@@ -973,7 +973,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Noun_Step3() {
+  private r_Suffix_Noun_Step3() {
     this.ket = this.cursor;
     if (this.find_among_b(a_16) == 0) {
       return false;
@@ -988,7 +988,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Verb_Step1() {
+  private r_Suffix_Verb_Step1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_17);
     if (among_var == 0) {
@@ -1024,7 +1024,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Verb_Step2a() {
+  private r_Suffix_Verb_Step2a() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_18);
     if (among_var == 0) {
@@ -1068,7 +1068,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Verb_Step2b() {
+  private r_Suffix_Verb_Step2b() {
     this.ket = this.cursor;
     if (this.find_among_b(a_19) == 0) {
       return false;
@@ -1083,7 +1083,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_Verb_Step2c() {
+  private r_Suffix_Verb_Step2c() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_20);
     if (among_var == 0) {
@@ -1111,7 +1111,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  r_Suffix_All_alef_maqsura() {
+  private r_Suffix_All_alef_maqsura() {
     this.ket = this.cursor;
     if (this.find_among_b(a_21) == 0) {
       return false;
@@ -1123,7 +1123,7 @@ export class ArabicStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.B_is_noun = true;
     this.B_is_verb = true;
     this.B_is_defined = false;

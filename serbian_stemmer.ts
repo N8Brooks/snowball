@@ -2248,7 +2248,7 @@ export class SerbianStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_cyr_to_lat() {
+  private r_cyr_to_lat() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -2433,7 +2433,7 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  r_prelude() {
+  private r_prelude() {
     const v_1 = this.cursor;
     while (true) {
       const v_2 = this.cursor;
@@ -2542,7 +2542,7 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.B_no_diacritics = true;
     const v_1 = this.cursor;
     lab0: {
@@ -2645,14 +2645,14 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_Step_1() {
+  private r_Step_1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -3143,7 +3143,7 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_2() {
+  private r_Step_2() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -4110,7 +4110,7 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_3() {
+  private r_Step_3() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -4125,7 +4125,7 @@ export class SerbianStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.r_cyr_to_lat();
     this.r_prelude();
     this.r_mark_regions();

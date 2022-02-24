@@ -16,7 +16,7 @@ export abstract class Stemmer {
   abstract readonly stopWords?: Set<string>;
 
   /** Constructs the stem */
-  abstract stemHelper(): void;
+  abstract _stemHelper(): void;
 
   /** Maps languages to their stemmer class */
   static languages: Map<string, { new (): Stemmer } & typeof Stemmer> =
@@ -35,9 +35,14 @@ export abstract class Stemmer {
 
   /** The stem of lowercase `word` */
   stem(word: string): string {
-    this.setCurrent(word);
-    this.stemHelper();
-    return this.getCurrent();
+    this.current = word;
+    this.cursor = 0;
+    this.limit = this.current.length;
+    this.limit_backward = 0;
+    this.bra = this.cursor;
+    this.ket = this.limit;
+    this._stemHelper();
+    return this.current;
   }
 
   /** Registers the language as in `Stemmer` */
@@ -46,29 +51,6 @@ export abstract class Stemmer {
     stemmerClass: { new (): Stemmer } & typeof Stemmer,
   ) {
     Stemmer.languages.set(language, stemmerClass);
-  }
-
-  protected setCurrent(value: string) {
-    this.current = value;
-    this.cursor = 0;
-    this.limit = this.current.length;
-    this.limit_backward = 0;
-    this.bra = this.cursor;
-    this.ket = this.limit;
-  }
-
-  protected getCurrent() {
-    return this.current;
-  }
-
-  // Remove?
-  protected copy_from(other: Stemmer) {
-    this.current = other.current;
-    this.cursor = other.cursor;
-    this.limit = other.limit;
-    this.limit_backward = other.limit_backward;
-    this.bra = other.bra;
-    this.ket = other.ket;
   }
 
   protected in_grouping(s: number[], min: number, max: number) {
@@ -177,11 +159,6 @@ export abstract class Stemmer {
       if (j - i <= 1) {
         if (i > 0) break; // v->s has been inspected
         if (j == i) break; // only one item in v
-
-        // - but now we need to go round once more to get
-        // v->s inspected. This looks messy, but is actually
-        // the optimal approach.
-
         if (first_key_inspected) break;
         first_key_inspected = true;
       }
@@ -200,7 +177,6 @@ export abstract class Stemmer {
     return 0;
   }
 
-  // find_among_b is for backwards processing. Same comments apply
   protected find_among_b(v: Rule[]) {
     let i = 0;
     let j = v.length;
@@ -256,9 +232,6 @@ export abstract class Stemmer {
     return 0;
   }
 
-  /* to replace chars between c_bra and c_ket in this.current by the
-   * chars in s.
-   */
   protected replace_s(c_bra: number, c_ket: number, s: string) {
     const adjustment = s.length - (c_ket - c_bra);
     this.current = this.current.slice(0, c_bra) + s + this.current.slice(c_ket);
@@ -305,9 +278,5 @@ export abstract class Stemmer {
       result = this.current.slice(this.bra, this.ket);
     }
     return result;
-  }
-
-  protected assign_to() {
-    return this.current.slice(0, this.limit);
   }
 }

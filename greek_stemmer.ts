@@ -1119,14 +1119,14 @@ export class GreekStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_has_min_length() {
+  private r_has_min_length() {
     if (!(this.current.length >= 3)) {
       return false;
     }
     return true;
   }
 
-  r_tolower() {
+  private r_tolower() {
     while (true) {
       const v_1 = this.limit - this.cursor;
       lab0: {
@@ -1272,7 +1272,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step1() {
+  private r_step1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_1);
     if (among_var == 0) {
@@ -1340,7 +1340,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps1() {
+  private r_steps1() {
     this.ket = this.cursor;
     if (this.find_among_b(a_3) == 0) {
       return false;
@@ -1374,7 +1374,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps2() {
+  private r_steps2() {
     this.ket = this.cursor;
     if (this.find_among_b(a_5) == 0) {
       return false;
@@ -1398,7 +1398,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps3() {
+  private r_steps3() {
     this.ket = this.cursor;
     if (this.find_among_b(a_7) == 0) {
       return false;
@@ -1448,7 +1448,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps4() {
+  private r_steps4() {
     this.ket = this.cursor;
     if (this.find_among_b(a_9) == 0) {
       return false;
@@ -1472,7 +1472,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps5() {
+  private r_steps5() {
     this.ket = this.cursor;
     if (this.find_among_b(a_11) == 0) {
       return false;
@@ -1506,7 +1506,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps6() {
+  private r_steps6() {
     this.ket = this.cursor;
     if (this.find_among_b(a_14) == 0) {
       return false;
@@ -1607,7 +1607,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps7() {
+  private r_steps7() {
     this.ket = this.cursor;
     if (this.find_among_b(a_16) == 0) {
       return false;
@@ -1631,7 +1631,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps8() {
+  private r_steps8() {
     this.ket = this.cursor;
     if (this.find_among_b(a_18) == 0) {
       return false;
@@ -1680,7 +1680,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps9() {
+  private r_steps9() {
     this.ket = this.cursor;
     if (this.find_among_b(a_21) == 0) {
       return false;
@@ -1719,7 +1719,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_steps10() {
+  private r_steps10() {
     this.ket = this.cursor;
     if (this.find_among_b(a_23) == 0) {
       return false;
@@ -1743,7 +1743,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step2a() {
+  private r_step2a() {
     this.ket = this.cursor;
     if (this.find_among_b(a_24) == 0) {
       return false;
@@ -1770,7 +1770,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step2b() {
+  private r_step2b() {
     this.ket = this.cursor;
     if (this.find_among_b(a_26) == 0) {
       return false;
@@ -1790,7 +1790,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step2c() {
+  private r_step2c() {
     this.ket = this.cursor;
     if (this.find_among_b(a_28) == 0) {
       return false;
@@ -1810,7 +1810,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step2d() {
+  private r_step2d() {
     this.ket = this.cursor;
     if (this.find_among_b(a_30) == 0) {
       return false;
@@ -1834,7 +1834,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step3() {
+  private r_step3() {
     this.ket = this.cursor;
     if (this.find_among_b(a_32) == 0) {
       return false;
@@ -1855,7 +1855,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step4() {
+  private r_step4() {
     this.ket = this.cursor;
     if (this.find_among_b(a_33) == 0) {
       return false;
@@ -1894,7 +1894,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5a() {
+  private r_step5a() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       if (!this.eq_s_b("\u03B1\u03B3\u03B1\u03BC\u03B5")) {
@@ -1944,7 +1944,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5b() {
+  private r_step5b() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -2007,7 +2007,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5c() {
+  private r_step5c() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -2071,7 +2071,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5d() {
+  private r_step5d() {
     this.ket = this.cursor;
     if (this.find_among_b(a_43) == 0) {
       return false;
@@ -2110,7 +2110,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5e() {
+  private r_step5e() {
     this.ket = this.cursor;
     if (this.find_among_b(a_44) == 0) {
       return false;
@@ -2134,7 +2134,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5f() {
+  private r_step5f() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -2182,7 +2182,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5g() {
+  private r_step5g() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -2234,7 +2234,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5h() {
+  private r_step5h() {
     this.ket = this.cursor;
     if (this.find_among_b(a_53) == 0) {
       return false;
@@ -2273,7 +2273,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5i() {
+  private r_step5i() {
     this.ket = this.cursor;
     if (this.find_among_b(a_56) == 0) {
       return false;
@@ -2332,7 +2332,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5j() {
+  private r_step5j() {
     this.ket = this.cursor;
     if (this.find_among_b(a_57) == 0) {
       return false;
@@ -2356,7 +2356,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5k() {
+  private r_step5k() {
     this.ket = this.cursor;
     if (this.find_among_b(a_59) == 0) {
       return false;
@@ -2380,7 +2380,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5l() {
+  private r_step5l() {
     this.ket = this.cursor;
     if (this.find_among_b(a_61) == 0) {
       return false;
@@ -2404,7 +2404,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step5m() {
+  private r_step5m() {
     this.ket = this.cursor;
     if (this.find_among_b(a_63) == 0) {
       return false;
@@ -2428,7 +2428,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step6() {
+  private r_step6() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -2455,7 +2455,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  r_step7() {
+  private r_step7() {
     this.ket = this.cursor;
     if (this.find_among_b(a_67) == 0) {
       return false;
@@ -2467,7 +2467,7 @@ export class GreekStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.limit_backward = this.cursor;
     this.cursor = this.limit;
     const v_1 = this.limit - this.cursor;

@@ -12,7 +12,7 @@ export class HindiStemmer extends Stemmer {
     return true;
   };
 
-  stemHelper() {
+  _stemHelper() {
     if (this.cursor >= this.limit) {
       return false;
     }

@@ -96,7 +96,7 @@ export class PorterStemmer extends Stemmer {
 
   readonly stopWords = ENGLISH_STOP_WORDS;
 
-  r_shortv() {
+  private r_shortv() {
     if (!this.out_grouping_b(g_v_WXY, 89, 121)) {
       return false;
     }
@@ -109,21 +109,21 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_Step_1a() {
+  private r_Step_1a() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);
     if (among_var == 0) {
@@ -150,7 +150,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1b() {
+  private r_Step_1b() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -233,7 +233,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1c() {
+  private r_Step_1c() {
     this.ket = this.cursor;
     lab0: {
       const v_1 = this.limit - this.cursor;
@@ -268,7 +268,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_2() {
+  private r_Step_2() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_3);
     if (among_var == 0) {
@@ -348,7 +348,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_3() {
+  private r_Step_3() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_4);
     if (among_var == 0) {
@@ -378,7 +378,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_4() {
+  private r_Step_4() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_5);
     if (among_var == 0) {
@@ -416,7 +416,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_5a() {
+  private r_Step_5a() {
     this.ket = this.cursor;
     if (!this.eq_s_b("e")) {
       return false;
@@ -451,7 +451,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_5b() {
+  private r_Step_5b() {
     this.ket = this.cursor;
     if (!this.eq_s_b("l")) {
       return false;
@@ -469,7 +469,7 @@ export class PorterStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.B_Y_found = false;
     const v_1 = this.cursor;
     lab0: {

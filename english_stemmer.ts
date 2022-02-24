@@ -157,7 +157,7 @@ export class EnglishStemmer extends Stemmer {
 
   readonly stopWords = ENGLISH_STOP_WORDS;
 
-  r_prelude() {
+  private r_prelude() {
     this.B_Y_found = false;
     const v_1 = this.cursor;
     lab0: {
@@ -222,7 +222,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
     const v_1 = this.cursor;
@@ -296,7 +296,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_shortv() {
+  private r_shortv() {
     lab0: {
       const v_1 = this.limit - this.cursor;
       lab1: {
@@ -325,21 +325,21 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_Step_1a() {
+  private r_Step_1a() {
     const v_1 = this.limit - this.cursor;
     lab0: {
       this.ket = this.cursor;
@@ -412,7 +412,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1b() {
+  private r_Step_1b() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_4);
     if (among_var == 0) {
@@ -495,7 +495,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_1c() {
+  private r_Step_1c() {
     this.ket = this.cursor;
     lab0: {
       const v_1 = this.limit - this.cursor;
@@ -526,7 +526,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_2() {
+  private r_Step_2() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_5);
     if (among_var == 0) {
@@ -622,7 +622,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_3() {
+  private r_Step_3() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_6);
     if (among_var == 0) {
@@ -670,7 +670,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_4() {
+  private r_Step_4() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_7);
     if (among_var == 0) {
@@ -708,7 +708,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_Step_5() {
+  private r_Step_5() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_8);
     if (among_var == 0) {
@@ -759,7 +759,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_exception2() {
+  private r_exception2() {
     this.ket = this.cursor;
     if (this.find_among_b(a_9) == 0) {
       return false;
@@ -771,7 +771,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_exception1() {
+  private r_exception1() {
     this.bra = this.cursor;
     const among_var = this.find_among(a_10);
     if (among_var == 0) {
@@ -841,7 +841,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  r_postlude() {
+  private r_postlude() {
     if (!this.B_Y_found) {
       return false;
     }
@@ -877,7 +877,7 @@ export class EnglishStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     lab0: {
       const v_1 = this.cursor;
       lab1: {

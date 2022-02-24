@@ -229,7 +229,7 @@ export class PortugueseStemmer extends Stemmer {
 
   readonly stopWords = PORTUGUESE_STOP_WORDS;
 
-  r_prelude() {
+  private r_prelude() {
     while (true) {
       const v_1 = this.cursor;
       lab0: {
@@ -265,7 +265,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_mark_regions() {
+  private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p1 = this.limit;
     this.I_p2 = this.limit;
@@ -417,7 +417,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_postlude() {
+  private r_postlude() {
     while (true) {
       const v_1 = this.cursor;
       lab0: {
@@ -453,28 +453,28 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_RV() {
+  private r_RV() {
     if (!(this.I_pV <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_R2() {
+  private r_R2() {
     if (!(this.I_p2 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_standard_suffix() {
+  private r_standard_suffix() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_5);
     if (among_var == 0) {
@@ -647,7 +647,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_verb_suffix() {
+  private r_verb_suffix() {
     if (this.cursor < this.I_pV) {
       return false;
     }
@@ -666,7 +666,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_residual_suffix() {
+  private r_residual_suffix() {
     this.ket = this.cursor;
     if (this.find_among_b(a_7) == 0) {
       return false;
@@ -681,7 +681,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  r_residual_form() {
+  private r_residual_form() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_8);
     if (among_var == 0) {
@@ -738,7 +738,7 @@ export class PortugueseStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     const v_1 = this.cursor;
     this.r_prelude();
     this.cursor = v_1;

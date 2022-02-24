@@ -301,14 +301,14 @@ export class LithuanianStemmer extends Stemmer {
 
   readonly stopWords = undefined;
 
-  r_R1() {
+  private r_R1() {
     if (!(this.I_p1 <= this.cursor)) {
       return false;
     }
     return true;
   }
 
-  r_step1() {
+  private r_step1() {
     if (this.cursor < this.I_p1) {
       return false;
     }
@@ -330,7 +330,7 @@ export class LithuanianStemmer extends Stemmer {
     return true;
   }
 
-  r_step2() {
+  private r_step2() {
     while (true) {
       const v_1 = this.limit - this.cursor;
       lab0: {
@@ -357,7 +357,7 @@ export class LithuanianStemmer extends Stemmer {
     return true;
   }
 
-  r_fix_conflicts() {
+  private r_fix_conflicts() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_2);
     if (among_var == 0) {
@@ -409,7 +409,7 @@ export class LithuanianStemmer extends Stemmer {
     return true;
   }
 
-  r_fix_chdz() {
+  private r_fix_chdz() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_3);
     if (among_var == 0) {
@@ -431,7 +431,7 @@ export class LithuanianStemmer extends Stemmer {
     return true;
   }
 
-  r_fix_gd() {
+  private r_fix_gd() {
     this.ket = this.cursor;
     if (this.find_among_b(a_4) == 0) {
       return false;
@@ -443,7 +443,7 @@ export class LithuanianStemmer extends Stemmer {
     return true;
   }
 
-  stemHelper() {
+  _stemHelper() {
     this.I_p1 = this.limit;
     const v_1 = this.cursor;
     lab0: {
