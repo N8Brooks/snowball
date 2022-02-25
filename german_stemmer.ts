@@ -49,6 +49,7 @@ const g_s_ending = [117, 30, 5];
 
 const g_st_ending = [117, 30, 4];
 
+/** Stemmer for the German language */
 export class GermanStemmer extends Stemmer {
   private I_x = 0;
   private I_p2 = 0;

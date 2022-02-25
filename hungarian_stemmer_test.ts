@@ -1,6 +1,6 @@
 import { HungarianStemmer as ActualHungarianStemmer } from "./hungarian_stemmer.ts";
 import { Hungarian as ExpectedHungarianStemmer } from "./javascript/hungarian.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualHungarianStemmer = new ActualHungarianStemmer();
 const expectedHungarianStemmer = new ExpectedHungarianStemmer();

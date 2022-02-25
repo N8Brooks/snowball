@@ -296,6 +296,7 @@ const a_4: Rule[] = [["gd", -1, 1]];
 // deno-fmt-ignore
 const g_v = [17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 64, 1, 0, 64, 0, 0, 0, 0, 0, 0, 0, 4, 4];
 
+/** Stemmer for the Lithuanian language */
 export class LithuanianStemmer extends Stemmer {
   private I_p1 = 0;
 

@@ -1,6 +1,6 @@
 import { LovinsStemmer as ActualLovinsStemmer } from "./lovins_stemmer.ts";
 import { Lovins as ExpectedLovinsStemmer } from "./javascript/lovins.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualLovinsStemmer = new ActualLovinsStemmer();
 const expectedLovinsStemmer = new ExpectedLovinsStemmer();

@@ -205,6 +205,7 @@ const a_3: Rule[] = [
 
 const g_v = [209, 4, 128, 0, 18];
 
+/** Stemmer for the Armenian language */
 export class ArmenianStemmer extends Stemmer {
   private I_p2 = 0;
   private I_pV = 0;

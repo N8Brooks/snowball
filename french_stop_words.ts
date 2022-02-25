@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the french language */
+/** Stop words for the French language */
 export const FRENCH_STOP_WORDS = new Set([
   "ai", "aie", "aient", "aies", "ait", "au", "aurai", "auraient", "aurais", "aurait",
   "aurez", "auriez", "aurions", "aurons", "auront", "aux", "avaient", "avais", "avait",

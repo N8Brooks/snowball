@@ -246,6 +246,7 @@ const a_5: Rule[] = [
 
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 32, 0, 0, 4];
 
+/** Stemmer for the Romanian language */
 export class RomanianStemmer extends Stemmer {
   private B_standard_suffix_removed = false;
   private I_p2 = 0;

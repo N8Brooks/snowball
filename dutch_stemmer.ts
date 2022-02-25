@@ -57,6 +57,7 @@ const g_v_I = [1, 0, 0, 17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128];
 
 const g_v_j = [17, 67, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128];
 
+/** Stemmer for the Dutch language */
 export class DutchStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

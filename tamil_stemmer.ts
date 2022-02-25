@@ -244,6 +244,7 @@ const a_25: Rule[] = [
   ["\u0BBE\u0BA8\u0BBF\u0BA9\u0BCD\u0BB1\u0BCD", -1, -1],
 ];
 
+/** Stemmer for the Tamil language */
 export class TamilStemmer extends Stemmer {
   private B_found_vetrumai_urupu = false;
   private B_found_a_match = false;

@@ -228,6 +228,7 @@ const g_AEIO = [17, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 128, 8, 2];
 
 const g_CG = [17];
 
+/** Stemmer for the Italian language */
 export class ItalianStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

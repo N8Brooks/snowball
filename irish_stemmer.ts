@@ -92,6 +92,7 @@ const a_3: Rule[] = [
 
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 17, 4, 2];
 
+/** Stemmer for the Irish language */
 export class IrishStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

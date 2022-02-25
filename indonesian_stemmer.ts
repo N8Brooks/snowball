@@ -15,6 +15,7 @@ const a_1: Rule[] = [
 
 const g_vowel = [17, 65, 16];
 
+/** Stemmer for the Indonesian language */
 export class IndonesianStemmer extends Stemmer {
   I_prefix = 0;
   I_measure = 0;

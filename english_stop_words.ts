@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the english language */
+/** Stop words for the English language */
 export const ENGLISH_STOP_WORDS = new Set([
     "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any",
     "are", "aren't", "as", "at", "be", "because", "been", "before", "being", "below",

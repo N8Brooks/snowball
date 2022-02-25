@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the irish language */
+/** Stop words for the Irish language */
 export const IRISH_STOP_WORDS = new Set([
   "a", "ach", "ag", "agus", "an", "aon", "ar", "arna", "as", "b'", "ba", "beirt",
   "bhúr", "caoga", "ceathair", "ceathrar", "chomh", "chtó", "chuig", "chun", "cois",

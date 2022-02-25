@@ -1,6 +1,6 @@
 import { TamilStemmer as ActualTamilStemmer } from "./tamil_stemmer.ts";
 import { Tamil as ExpectedTamilStemmer } from "./javascript/tamil.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualTamilStemmer = new ActualTamilStemmer();
 const expectedTamilStemmer = new ExpectedTamilStemmer();

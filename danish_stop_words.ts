@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the danish language */
+/** Stop words for the Danish language */
 export const DANISH_STOP_WORDS = new Set([
   "ad", "af", "alle", "alt", "anden", "at", "blev", "blive", "bliver", "da", "de",
   "dem", "den", "denne", "der", "deres", "det", "dette", "dig", "din", "disse", "dog",

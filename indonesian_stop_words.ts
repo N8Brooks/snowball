@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the indonesian language */
+/** Stop words for the Indonesian language */
 export const INDONESIAN_STOP_WORDS = new Set([
   "ada", "adalah", "akan", "aku", "anda", "antara", "apa", "apabila", "atau", "ataupun",
   "bagaimana", "bagi", "bahwa", "banyak", "beberapa", "begitu", "beliau", "belum",

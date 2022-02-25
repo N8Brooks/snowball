@@ -434,6 +434,7 @@ const a_2: Rule[] = [
 
 const g_v = [17, 65, 16];
 
+/** Stemmer for the Basque language */
 export class BasqueStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

@@ -89,6 +89,7 @@ const g_v = [17, 65, 16, 1];
 
 const g_v_WXY = [1, 17, 65, 208, 1];
 
+/** Stemmer for the Porter language */
 export class PorterStemmer extends Stemmer {
   private B_Y_found = false;
   private I_p2 = 0;

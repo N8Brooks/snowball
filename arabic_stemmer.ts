@@ -282,6 +282,7 @@ const a_20: Rule[] = [
 
 const a_21: Rule[] = [["\u0649", -1, 1]];
 
+/** Stemmer for the Arabic language */
 export class ArabicStemmer extends Stemmer {
   private B_is_defined = false;
   private B_is_verb = false;

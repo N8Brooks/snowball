@@ -1,6 +1,6 @@
 import { KraaijPohlmannStemmer as ActualKraaijPohlmannStemmer } from "./kraaij_pohlmann_stemmer.ts";
 import { KraaijPohlmann as ExpectedKraaijPohlmannStemmer } from "./javascript/kraaij-pohlmann.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualKraaijPohlmannStemmer = new ActualKraaijPohlmannStemmer();
 const expectedKraaijPohlmannStemmer = new ExpectedKraaijPohlmannStemmer();

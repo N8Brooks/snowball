@@ -1,6 +1,6 @@
 import { GreekStemmer as ActualGreekStemmer } from "./greek_stemmer.ts";
 import { Greek as ExpectedGreekStemmer } from "./javascript/greek.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualGreekStemmer = new ActualGreekStemmer();
 const expectedGreekStemmer = new ExpectedGreekStemmer();

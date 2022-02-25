@@ -126,6 +126,7 @@ const a_3: Rule[] = [
   ["\u0939\u094B\u0938\u094D", -1, 1],
 ];
 
+/** Stemmer for the Nepali language */
 export class NepaliStemmer extends Stemmer {
   readonly stopWords = undefined;
 

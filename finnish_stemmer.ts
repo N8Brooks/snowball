@@ -97,6 +97,7 @@ const g_V2 = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 32];
 // deno-fmt-ignore
 const g_particle_end = [17, 97, 24, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 32];
 
+/** Stemmer for the Finnish language */
 export class FinnishStemmer extends Stemmer {
   private B_ending_removed = false;
   private S_x = "";

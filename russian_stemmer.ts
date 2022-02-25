@@ -160,6 +160,7 @@ const a_7: Rule[] = [
 
 const g_v = [33, 65, 8, 232];
 
+/** Stemmer for the Russian language */
 export class RussianStemmer extends Stemmer {
   private I_p2 = 0;
   private I_pV = 0;

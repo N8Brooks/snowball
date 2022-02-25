@@ -2,6 +2,7 @@ import { Rule, Stemmer } from "./_stemmer.ts";
 
 const g_consonant = [255, 255, 255, 255, 159, 0, 0, 0, 248, 7];
 
+/** Stemmer for the Hindi language */
 export class HindiStemmer extends Stemmer {
   readonly stopWords = undefined;
 

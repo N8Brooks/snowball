@@ -212,6 +212,7 @@ const g_vowel5 = [65];
 
 const g_vowel6 = [65];
 
+/** Stemmer for the Turkish language */
 export class TurkishStemmer extends Stemmer {
   private B_continue_stemming_noun_suffixes = false;
 

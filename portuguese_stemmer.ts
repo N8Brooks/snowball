@@ -222,6 +222,7 @@ const a_8: Rule[] = [
 
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 19, 12, 2];
 
+/** Stemmer for the Portuguese language */
 export class PortugueseStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

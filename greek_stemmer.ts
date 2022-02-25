@@ -1114,6 +1114,7 @@ const g_v = [81, 65, 16, 1];
 
 const g_v2 = [81, 65, 0, 1];
 
+/** Stemmer for the Greek language */
 export class GreekStemmer extends Stemmer {
   private B_test1 = false;
 

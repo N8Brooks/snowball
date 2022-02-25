@@ -1,6 +1,6 @@
 import { SerbianStemmer as ActualSerbianStemmer } from "./serbian_stemmer.ts";
 import { Serbian as ExpectedSerbianStemmer } from "./javascript/serbian.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualSerbianStemmer = new ActualSerbianStemmer();
 const expectedSerbianStemmer = new ExpectedSerbianStemmer();

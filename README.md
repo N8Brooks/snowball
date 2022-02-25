@@ -11,7 +11,7 @@ based on the compiled JavaScript stemmers from the
 Provides the stem of the given word. Assumes that the input is lowercase.
 
 ```ts
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
 
 const englishStemmer = new EnglishStemmer();
@@ -24,7 +24,7 @@ assertStrictEquals(stem, "enthusiast");
 Here is an example with multiple words.
 
 ```ts
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
 
 const sentence = "the quick brown fox jumped over the lazy dog";
@@ -47,7 +47,7 @@ assertStrictEquals(
 Many languages are supported
 
 ```ts
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 import { RussianStemmer } from "https://deno.land/x/snowball/russian_stemmer.ts";
 
 const sentence = "обязательно выпейте свой овалтин";
@@ -65,6 +65,23 @@ assertStrictEquals(
 );
 ```
 
+### LanguageStemmers
+
+There is an `Object` containing all available languages and stemmers defined in
+`mod.ts`.
+
+```ts
+import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { LanguageStemmers } from "https://deno.land/x/snowball/mod.ts";
+
+const spanishStemmer = new LanguageStemmers["Spanish"]();
+
+assertStrictEquals(
+  spanishStemmer.stem("gracias"),
+  "graci",
+);
+```
+
 ### stopWords
 
 Stop words generally provide little or no information. Some languages come with
@@ -76,7 +93,7 @@ your input text.
 
 ```ts
 import { assert } from "https://deno.land/std@0.126.0/testing/asserts.ts";
-import { EnglishStemmer } from "https://deno.land/x/snowball.english_stemmer.ts";
+import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
 
 const englishStemmer = new EnglishStemmer();
 

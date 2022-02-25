@@ -2242,6 +2242,7 @@ const g_ca = [119, 95, 23, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32
 
 const g_rg = [1];
 
+/** Stemmer for the Serbian language */
 export class SerbianStemmer extends Stemmer {
   private I_p1 = 0;
   private B_no_diacritics = false;

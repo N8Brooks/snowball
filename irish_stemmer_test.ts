@@ -1,6 +1,6 @@
 import { IrishStemmer as ActualIrishStemmer } from "./irish_stemmer.ts";
 import { Irish as ExpectedIrishStemmer } from "./javascript/irish.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualIrishStemmer = new ActualIrishStemmer();
 const expectedIrishStemmer = new ExpectedIrishStemmer();

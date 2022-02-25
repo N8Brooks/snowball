@@ -1,6 +1,6 @@
 import { TurkishStemmer as ActualTurkishStemmer } from "./turkish_stemmer.ts";
 import { Turkish as ExpectedTurkishStemmer } from "./javascript/turkish.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualTurkishStemmer = new ActualTurkishStemmer();
 const expectedTurkishStemmer = new ExpectedTurkishStemmer();

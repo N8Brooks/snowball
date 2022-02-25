@@ -150,6 +150,7 @@ const g_v_WXY = [1, 17, 65, 208, 1];
 
 const g_valid_LI = [55, 141, 2];
 
+/** Stemmer for the English language */
 export class EnglishStemmer extends Stemmer {
   private B_Y_found = false;
   private I_p2 = 0;

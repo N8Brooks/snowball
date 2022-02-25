@@ -56,6 +56,7 @@ const g_v = [17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 0, 128];
 
 const g_s_ending = [119, 125, 149, 1];
 
+/** Stemmer for the Norwegian language */
 export class NorwegianStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;

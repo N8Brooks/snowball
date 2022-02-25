@@ -575,6 +575,7 @@ const a_4: Rule[] = [
 // deno-fmt-ignore
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 129, 81, 6, 10];
 
+/** Stemmer for the Catalan language */
 export class CatalanStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

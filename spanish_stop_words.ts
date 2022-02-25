@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the spanish language */
+/** Stop words for the Spanish language */
 export const SPANISH_STOP_WORDS = new Set([
   "a", "al", "algo", "algunas", "algunos", "ante", "antes", "como", "con", "contra",
   "cual", "cuando", "de", "del", "desde", "donde", "durante", "e", "el", "ella",

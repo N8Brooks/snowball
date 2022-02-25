@@ -63,6 +63,7 @@ const g_v = [17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 32];
 
 const g_s_ending = [119, 127, 149];
 
+/** Stemmer for the Swedish language */
 export class SwedishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;

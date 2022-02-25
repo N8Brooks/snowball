@@ -1,6 +1,6 @@
 import { BasqueStemmer as ActualBasqueStemmer } from "./basque_stemmer.ts";
 import { Basque as ExpectedBasqueStemmer } from "./javascript/basque.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualBasqueStemmer = new ActualBasqueStemmer();
 const expectedBasqueStemmer = new ExpectedBasqueStemmer();

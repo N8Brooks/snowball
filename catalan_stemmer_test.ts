@@ -1,6 +1,6 @@
 import { CatalanStemmer as ActualCatalanStemmer } from "./catalan_stemmer.ts";
 import { Catalan as ExpectedCatalanStemmer } from "./javascript/catalan.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualCatalanStemmer = new ActualCatalanStemmer();
 const expectedCatalanStemmer = new ExpectedCatalanStemmer();

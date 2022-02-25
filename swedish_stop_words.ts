@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the swedish language */
+/** Stop words for the Swedish language */
 export const SWEDISH_STOP_WORDS = new Set([
   "alla", "allt", "att", "av", "blev", "bli", "blir", "blivit", "de", "dem", "den",
   "denna", "deras", "dess", "dessa", "det", "detta", "dig", "din", "dina", "ditt", "du",

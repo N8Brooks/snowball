@@ -235,6 +235,7 @@ const a_9: Rule[] = [
 
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 17, 4, 10];
 
+/** Stemmer for the Spanish language */
 export class SpanishStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

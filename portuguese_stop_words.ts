@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the portuguese language */
+/** Stop words for the Portuguese language */
 export const PORTUGUESE_STOP_WORDS = new Set([
   "a", "ao", "aos", "aquela", "aquelas", "aquele", "aqueles", "aquilo", "as", "até",
   "com", "como", "da", "das", "de", "dela", "delas", "dele", "deles", "depois", "do",

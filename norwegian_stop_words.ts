@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the nepali language */
+/** Stop words for the Nepali language */
 export const NORWEGIAN_STOP_WORDS = new Set([
   "alle", "at", "av", "bare", "begge", "ble", "blei", "bli", "blir", "blitt", "både",
   "båe", "da", "de", "deg", "dei", "deim", "deira", "deires", "dem", "den", "denne",

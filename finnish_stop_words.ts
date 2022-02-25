@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the finnish language */
+/** Stop words for the Finnish language */
 export const FINNISH_STOP_WORDS = new Set([
   "ei", "eivät", "emme", "en", "et", "ette", "että", "he", "heidän", "heidät", "heihin",
   "heille", "heillä", "heiltä", "heissä", "heistä", "heitä", "hän", "häneen", "hänelle",

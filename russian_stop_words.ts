@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the russian language */
+/** Stop words for the Russian language */
 export const RUSSIAN_STOP_WORDS = new Set([
   "а", "без", "более", "больше", "будет", "будто", "бы", "был", "была", "были", "было",
   "быть", "в", "вам", "вас", "вдруг", "ведь", "во", "вот", "впрочем", "все", "всегда",

@@ -1,9 +1,8 @@
-// Import from mod.ts
-
 export type Rule =
   | [string, number, number]
   | [string, number, number, (stemmer: Stemmer) => boolean];
 
+/** Used for stemming a specific language */
 export abstract class Stemmer {
   current!: string;
   cursor!: number;
@@ -18,21 +17,6 @@ export abstract class Stemmer {
   /** Constructs the stem */
   abstract _stemHelper(): void;
 
-  /** Maps languages to their stemmer class */
-  static languages: Map<string, { new (): Stemmer } & typeof Stemmer> =
-    new Map();
-
-  /** Factory method that constructs a stemmer for a specific language */
-  static from(language: string) {
-    language = language.toLowerCase();
-    const stemmerClass = Stemmer.languages.get(language);
-    if (stemmerClass) {
-      return new stemmerClass();
-    } else {
-      throw RangeError(`There is no stemmer for ${language}`);
-    }
-  }
-
   /** The stem of lowercase `word` */
   stem(word: string): string {
     this.current = word;
@@ -43,14 +27,6 @@ export abstract class Stemmer {
     this.ket = this.limit;
     this._stemHelper();
     return this.current;
-  }
-
-  /** Registers the language as in `Stemmer` */
-  static _register(
-    language: string,
-    stemmerClass: { new (): Stemmer } & typeof Stemmer,
-  ) {
-    Stemmer.languages.set(language, stemmerClass);
   }
 
   protected in_grouping(s: number[], min: number, max: number) {

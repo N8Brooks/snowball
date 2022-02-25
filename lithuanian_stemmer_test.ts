@@ -1,6 +1,6 @@
 import { LithuanianStemmer as ActualLithuanianStemmer } from "./lithuanian_stemmer.ts";
 import { Lithuanian as ExpectedLithuanianStemmer } from "./javascript/lithuanian.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualLithuanianStemmer = new ActualLithuanianStemmer();
 const expectedLithuanianStemmer = new ExpectedLithuanianStemmer();

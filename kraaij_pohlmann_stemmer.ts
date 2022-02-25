@@ -111,6 +111,7 @@ const g_AOU = [1, 64, 16];
 
 const g_AIOU = [1, 65, 16];
 
+/** Stemmer for the KraaijPohlmann language */
 export class KraaijPohlmannStemmer extends Stemmer {
   private B_GE_removed = false;
   private B_stemmed = false;

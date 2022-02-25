@@ -1,6 +1,6 @@
 import { FinnishStemmer as ActualFinnishStemmer } from "./finnish_stemmer.ts";
 import { Finnish as ExpectedFinnishStemmer } from "./javascript/finnish.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualFinishStemmer = new ActualFinnishStemmer();
 const expectedFinnishStemmer = new ExpectedFinnishStemmer();

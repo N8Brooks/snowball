@@ -1,6 +1,6 @@
 import { YiddishStemmer as ActualYiddishStemmer } from "./yiddish_stemmer.ts";
 import { Yiddish as ExpectedYiddishStemmer } from "./javascript/yiddish.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualYiddishStemmer = new ActualYiddishStemmer();
 const expectedYiddishStemmer = new ExpectedYiddishStemmer();

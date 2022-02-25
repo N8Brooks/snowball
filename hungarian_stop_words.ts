@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the hungarian language */
+/** Stop words for the Hungarian language */
 export const HUNGARIAN_STOP_WORDS = new Set([
   "a", "abban", "ahhoz", "ahogy", "ahol", "aki", "akik", "akkor", "alatt", "amely",
   "amelyek", "amelyekben", "amelyeket", "amelyet", "amelynek", "ami", "amikor", "amit",

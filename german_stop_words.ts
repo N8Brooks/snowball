@@ -1,5 +1,5 @@
 //deno-fmt-ignore
-/** Stop words for the german language */
+/** Stop words for the German language */
 export const GERMAN_STOP_WORDS = new Set([
   "aber", "alle", "allem", "allen", "aller", "alles", "als", "also", "am", "an",
   "ander", "andere", "anderem", "anderen", "anderer", "anderes", "anderm", "andern",

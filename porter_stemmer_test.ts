@@ -1,6 +1,6 @@
 import { PorterStemmer as ActualPorterStemmer } from "./porter_stemmer.ts";
 import { Porter as ExpectedPorterStemmer } from "./javascript/porter.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualPorterStemmer = new ActualPorterStemmer();
 const expectedPorterStemmer = new ExpectedPorterStemmer();

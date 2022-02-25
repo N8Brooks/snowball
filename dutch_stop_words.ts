@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the dutch language */
+/** Stop words for the Dutch language */
 export const DUTCH_STOP_WORDS = new Set([
   "aan", "al", "alles", "als", "altijd", "andere", "ben", "bij", "daar", "dan", "dat",
   "de", "der", "deze", "die", "dit", "doch", "doen", "door", "dus", "een", "eens", "en",

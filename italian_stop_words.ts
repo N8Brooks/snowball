@@ -1,5 +1,5 @@
 // deno-fmt-ignore
-/** Stop words for the italian language */
+/** Stop words for the Italian language */
 export const ITALIAN_STOP_WORDS = new Set([
   "a", "abbia", "abbiamo", "abbiano", "abbiate", "ad", "agl", "agli", "ai", "al", "all",
   "alla", "alle", "allo", "anche", "avemmo", "avendo", "avesse", "avessero", "avessi",

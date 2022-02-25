@@ -222,6 +222,7 @@ const a_11: Rule[] = [
 // deno-fmt-ignore
 const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 17, 36, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1];
 
+/** Stemmer for the Hungarian language */
 export class HungarianStemmer extends Stemmer {
   private I_p1 = 0;
 

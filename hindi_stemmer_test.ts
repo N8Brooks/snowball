@@ -1,6 +1,6 @@
 import { HindiStemmer as ActualHindiStemmer } from "./hindi_stemmer.ts";
 import { Hindi as ExpectedHindiStemmer } from "./javascript/hindi.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualHindiStemmer = new ActualHindiStemmer();
 const expectedHindiStemmer = new ExpectedHindiStemmer();

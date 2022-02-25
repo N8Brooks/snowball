@@ -199,6 +199,7 @@ const g_vowel = [33, 2, 4, 0, 6];
 
 const g_consonant = [239, 254, 253, 131];
 
+/** Stemmer for the Yiddish language */
 export class YiddishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;

@@ -179,6 +179,7 @@ const g_v = [17, 65, 16, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 130, 103, 8, 5
 
 const g_keep_with_s = [1, 65, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128];
 
+/** Stemmer for the French language */
 export class FrenchStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;

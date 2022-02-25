@@ -1,6 +1,6 @@
 import { DanishStemmer as ActualDanishStemmer } from "./danish_stemmer.ts";
 import { Danish as ExpectedDanishStemmer } from "./javascript/danish.js";
-import { assertStrictEquals } from "https://deno.land/std@0.126.0/testing/asserts.ts";
+import { assertStrictEquals } from "./test_deps.ts";
 
 const actualDanishStemmer = new ActualDanishStemmer();
 const expectedDanishStemmer = new ExpectedDanishStemmer();
