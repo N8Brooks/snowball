@@ -63,7 +63,7 @@ const a_3: Rule[] = [
   ["yz", -1, 33],
 ];
 
-/** Stemmer for the Lovins language */
+/** Alternative English stemmer - the first published stemmer */
 export class LovinsStemmer extends Stemmer {
   readonly stopWords = ENGLISH_STOP_WORDS;
 
