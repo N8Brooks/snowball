@@ -216,8 +216,6 @@ const g_vowel6 = [65];
 export class TurkishStemmer extends Stemmer {
   private B_continue_stemming_noun_suffixes = false;
 
-  readonly stopWords = undefined;
-
   private r_check_vowel_harmony() {
     const v_1 = this.limit - this.cursor;
     golab0:

@@ -288,8 +288,6 @@ export class ArabicStemmer extends Stemmer {
   private B_is_verb = false;
   private B_is_noun = false;
 
-  readonly stopWords = undefined;
-
   private r_Normalize_pre() {
     const v_1 = this.cursor;
     while (true) {

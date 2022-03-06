@@ -2247,8 +2247,6 @@ export class SerbianStemmer extends Stemmer {
   private I_p1 = 0;
   private B_no_diacritics = false;
 
-  readonly stopWords = undefined;
-
   private r_cyr_to_lat() {
     const v_1 = this.cursor;
     while (true) {

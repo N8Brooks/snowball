@@ -210,8 +210,6 @@ export class ArmenianStemmer extends Stemmer {
   private I_p2 = 0;
   private I_pV = 0;
 
-  readonly stopWords = undefined;
-
   private r_mark_regions() {
     this.I_pV = this.limit;
     this.I_p2 = this.limit;

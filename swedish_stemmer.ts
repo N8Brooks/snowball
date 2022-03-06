@@ -1,4 +1,3 @@
-import { SWEDISH_STOP_WORDS } from "./swedish_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -67,8 +66,6 @@ const g_s_ending = [119, 127, 149];
 export class SwedishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;
-
-  readonly stopWords = SWEDISH_STOP_WORDS;
 
   private r_mark_regions() {
     this.I_p1 = this.limit;

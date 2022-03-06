@@ -1,6 +1,4 @@
-import { DANISH_STOP_WORDS } from "./danish_stop_words.ts";
-import { Rule } from "./_stemmer.ts";
-import { Stemmer } from "./_stemmer.ts";
+import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
   ["hed", -1, 1],
@@ -63,8 +61,6 @@ export class DanishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;
   private S_ch = "";
-
-  readonly stopWords = DANISH_STOP_WORDS;
 
   private r_mark_regions() {
     this.I_p1 = this.limit;

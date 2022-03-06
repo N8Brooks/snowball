@@ -1,4 +1,3 @@
-import { ENGLISH_STOP_WORDS } from "./english_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -65,8 +64,6 @@ const a_3: Rule[] = [
 
 /** Alternative English stemmer - the first published stemmer */
 export class LovinsStemmer extends Stemmer {
-  readonly stopWords = ENGLISH_STOP_WORDS;
-
   r_A = () => {
     {
       const c1 = this.cursor - 2;

@@ -1,4 +1,3 @@
-import { ITALIAN_STOP_WORDS } from "./italian_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -233,8 +232,6 @@ export class ItalianStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;
   private I_pV = 0;
-
-  readonly stopWords = ITALIAN_STOP_WORDS;
 
   private r_prelude() {
     const v_1 = this.cursor;

@@ -11,9 +11,6 @@ export abstract class Stemmer {
   bra!: number;
   ket!: number;
 
-  /** Words in this language that tend to not be informative */
-  abstract readonly stopWords?: Set<string>;
-
   /** Constructs the stem */
   abstract _stemHelper(): void;
 

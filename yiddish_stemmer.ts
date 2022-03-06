@@ -204,8 +204,6 @@ export class YiddishStemmer extends Stemmer {
   private I_x = 0;
   private I_p1 = 0;
 
-  readonly stopWords = undefined;
-
   private r_prelude() {
     const v_1 = this.cursor;
     while (true) {

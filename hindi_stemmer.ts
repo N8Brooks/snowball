@@ -4,8 +4,6 @@ const g_consonant = [255, 255, 255, 255, 159, 0, 0, 0, 248, 7];
 
 /** Stemmer for the Hindi language */
 export class HindiStemmer extends Stemmer {
-  readonly stopWords = undefined;
-
   r_CONSONANT = () => {
     if (!this.in_grouping_b(g_consonant, 2325, 2399)) {
       return false;

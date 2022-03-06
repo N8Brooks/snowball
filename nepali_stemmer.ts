@@ -128,8 +128,6 @@ const a_3: Rule[] = [
 
 /** Stemmer for the Nepali language */
 export class NepaliStemmer extends Stemmer {
-  readonly stopWords = undefined;
-
   private r_remove_category_1() {
     this.ket = this.cursor;
     const among_var = this.find_among_b(a_0);

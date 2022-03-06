@@ -1,4 +1,3 @@
-import { IRISH_STOP_WORDS } from "./irish_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -97,8 +96,6 @@ export class IrishStemmer extends Stemmer {
   private I_p2 = 0;
   private I_p1 = 0;
   private I_pV = 0;
-
-  readonly stopWords = IRISH_STOP_WORDS;
 
   private r_mark_regions() {
     this.I_pV = this.limit;

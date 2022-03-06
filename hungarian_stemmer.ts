@@ -1,4 +1,3 @@
-import { HUNGARIAN_STOP_WORDS } from "./hungarian_stop_words.ts";
 import { Rule, Stemmer } from "./_stemmer.ts";
 
 const a_0: Rule[] = [
@@ -225,8 +224,6 @@ const g_v = [17, 65, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 17, 36, 10, 0
 /** Stemmer for the Hungarian language */
 export class HungarianStemmer extends Stemmer {
   private I_p1 = 0;
-
-  readonly stopWords = HUNGARIAN_STOP_WORDS;
 
   private r_mark_regions() {
     this.I_p1 = this.limit;
