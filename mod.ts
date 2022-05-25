@@ -102,19 +102,3 @@ export {
   TurkishStemmer,
   YiddishStemmer,
 };
-
-export * from "./danish_stop_words.ts";
-export * from "./dutch_stop_words.ts";
-export * from "./english_stop_words.ts";
-export * from "./finnish_stop_words.ts";
-export * from "./french_stop_words.ts";
-export * from "./german_stop_words.ts";
-export * from "./hungarian_stop_words.ts";
-export * from "./indonesian_stop_words.ts";
-export * from "./irish_stop_words.ts";
-export * from "./italian_stop_words.ts";
-export * from "./norwegian_stop_words.ts";
-export * from "./portuguese_stop_words.ts";
-export * from "./russian_stop_words.ts";
-export * from "./spanish_stop_words.ts";
-export * from "./swedish_stop_words.ts";
