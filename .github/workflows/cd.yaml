@@ -1,0 +1,60 @@
+name: cd
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone
+        uses: actions/checkout@v2
+
+      - name: Set-up
+        uses: denoland/setup-deno@v1.0.0
+  
+      - name: Version
+        id: get_tag_version
+        run: echo ::set-output name=TAG_VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Build
+        run: deno run -A scripts/build_npm.ts ${{steps.get_tag_version.outputs.TAG_VERSION}}
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd npm
+          npm publish
+
+      - name: Remove Build
+        shell: bash
+        run: rm -rf npm
+
+      - name: Test
+        run: deno test --coverage=cov
+
+      - name: Generate Coverage
+        shell: bash
+        run: deno coverage cov --lcov --exclude="test\\.(ts|js)" > cov.lcov
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v2
+        with:
+          name: ${{ matrix.os }}-${{ matrix.deno }}
+          files: cov.lcov
+
+      - name: Remove Coverage
+        shell: bash
+        run: |
+          rm -rf cov
+          rm cov.lcov
