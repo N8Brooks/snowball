@@ -32,7 +32,7 @@ const sentence = "the quick brown fox jumped over the lazy dog";
 const englishStemmer = new EnglishStemmer();
 
 const stemmedSentence = sentence
-  .match(/\b\w\w+\b/gu) // matches two or more word characters
+  .match(/\b\w\w+\b/gu)! // matches two or more word characters
   .map((token) => englishStemmer.stem(token))
   .join(" ");
 
@@ -80,24 +80,6 @@ assertStrictEquals(
   spanishStemmer.stem("gracias"),
   "graci",
 );
-```
-
-### stopWords
-
-Stop words generally provide little or no information. Some languages come with
-common stop words from the
-[snowball-website](https://github.com/snowballstem/snowball-website). These can
-also be imported individually from the file containing the stopwords for that
-language. You should tokenize and stem these stop words the same way you do with
-your input text.
-
-```ts
-import { assert } from "https://deno.land/std@0.126.0/testing/asserts.ts";
-import { EnglishStemmer } from "https://deno.land/x/snowball/english_stemmer.ts";
-
-const englishStemmer = new EnglishStemmer();
-
-assert(englishStemmer.stopWords.has("been"));
 ```
 
 ## Supported Languages
